@@ -94,5 +94,5 @@ func startAPI(bot *tgbotapi.BotAPI, SecretWord, APIListenAddr string) {
 	})
 
 	log.Println("📡 API запущен на", APIListenAddr)
-	r.Run(APIListenAddr)
+	r.Run("0.0.0.0" + APIListenAddr)
 }
