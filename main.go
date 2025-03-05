@@ -26,7 +26,12 @@ func main() {
 	// Получаем значения переменных окружения
 	TelegramToken := os.Getenv("TELEGRAM_TOKEN")
 	SecretWord := os.Getenv("SECRET_WORD")
-	APIListenAddr := os.Getenv("API_LISTEN_ADDR")
+
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080" // Значение по умолчанию для локального запуска
+	}
+	APIListenAddr := ":" + port
 
 	bot, err := tgbotapi.NewBotAPI(TelegramToken)
 	if err != nil {
