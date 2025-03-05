@@ -32,7 +32,7 @@ func main() {
 		port = "8080" // Значение по умолчанию для локального запуска
 	}
 	APIListenAddr := ":" + port
-
+	log.Println("все успешно", TelegramToken, SecretWord, APIListenAddr)
 	bot, err := tgbotapi.NewBotAPI(TelegramToken)
 	if err != nil {
 		log.Fatal("Ошибка при создании бота:", err)
