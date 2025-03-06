@@ -5,6 +5,7 @@ import (
 	"net/http"
 	"os"
 	"sync"
+	"time"
 
 	"github.com/gin-gonic/gin"
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
@@ -64,6 +65,7 @@ func startTelegramBot(bot *tgbotapi.BotAPI, SecretWord string) {
 			msg := tgbotapi.NewMessage(chatID, "✅ Вы подписались на оповещения!")
 			bot.Send(msg)
 		}
+		time.Sleep(time.Minute)
 	}
 }
 
